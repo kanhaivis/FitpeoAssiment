@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="photo_details"
+            type="kk.models.PhotoDetailItem" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:background="#C4E8E8E6"
+        tools:context=".photodetail.PhotoDetailsFragment">
+
+        <ImageView
+            android:id="@+id/photodetails_header_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            imageFromUrl="@{photo_details.url}"
+            android:layout_marginTop="20dp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/photodetails_title_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{photo_details.title}"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            app:layout_constraintTop_toBottomOf="@+id/photodetails_header_img" />
+
+        <TextView
+            android:id="@+id/photodetails_description_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Detials"
+            app:layout_constraintTop_toBottomOf="@+id/photodetails_title_txt" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
